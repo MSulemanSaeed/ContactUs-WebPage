@@ -12,7 +12,7 @@ class ContactForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'placeholder': 'Phone*', 'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Email*', 'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
-            'message_field': forms.Textarea(attrs={'placeholder': 'Message*', 'class': 'form-control'}),
+            'message_field': forms.Textarea(attrs={'placeholder': 'Message*', 'class': 'form-control', "cols": "40", "rows": "9"}),
         }
 
     def __init__(self, *args, **kwargs):
