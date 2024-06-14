@@ -8,8 +8,8 @@ def home_view(request):
         if form.is_valid():
             form.save()
             return redirect('/#home') 
-        # else:
-        #     return redirect('/#contact')
+        else:
+            return render(request, 'home.html', {'form': form})
     else:
         form = ContactForm()
     return render(request, 'home.html', {'form': form})
