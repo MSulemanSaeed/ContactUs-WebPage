@@ -132,3 +132,16 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 STATICFILES_DIRS = [
     BASE_DIR , "static"
 ]
+
+# settings.py (for development)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# settings.py (for production)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'salmansaeed7272@gmail.com'
+EMAIL_HOST_PASSWORD = 'hzzl jtec ujjt wlpp'
+
+ADMIN_EMAIL = 'salmansaeed@gmail.com'
