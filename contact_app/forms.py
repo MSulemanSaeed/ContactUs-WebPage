@@ -7,12 +7,19 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ['name', 'phone', 'email', 'status', 'message_field']
+        labels = {
+            'name': 'NAME',
+            'phone': 'PHONE',
+            'email': 'EMAIL',
+            'status': 'STATUS',
+            'message_field': 'MESSAGE',
+        }
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Name*', 'class': 'form-control', 'required': 'required'}),
-            'phone': forms.TextInput(attrs={'placeholder': 'Phone*', 'class': 'form-control', 'required': 'required'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Email*', 'class': 'form-control', 'required': 'required'}),
+            'name': forms.TextInput(attrs={'placeholder': 'Enter your name', 'class': 'form-control', 'required': 'required'}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Enter your phone', 'class': 'form-control', 'required': 'required'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Enter your email', 'class': 'form-control', 'required': 'required'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
-            'message_field': forms.Textarea(attrs={'placeholder': 'Message*', 'class': 'form-control', 'required': 'required', "cols": "40", "rows": "9"}),
+            'message_field': forms.Textarea(attrs={'placeholder': 'Type your message', 'class': 'form-control', 'required': 'required', "cols": "40", "rows": "9"}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -27,6 +34,6 @@ class ContactForm(forms.ModelForm):
             ),
             'email',
             'status',
-            'message_field',
+            'message',
             Submit('submit', 'Submit', css_class='btn btn-primary')
         )
